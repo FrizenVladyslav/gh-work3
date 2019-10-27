@@ -6,14 +6,18 @@ function findWaterVolume(roks) {
     );
     const start = roks[startIndex];
     if (start === -1) break;
+
     roks.splice(0, startIndex + 1);
+
     const endIndex = roks.findIndex(
       row => row > start || row === Math.max.apply(null, roks)
     );
     const end = roks[endIndex];
     if (end === -1) break;
+
     const rocksWithWater = roks.splice(0, endIndex);
     if (rocksWithWater.length === 0) break;
+
     const maxValue = rocksWithWater.length * Math.min(start, end);
     volume += rocksWithWater.reduce(
       (accumulator, value) => accumulator - value,
