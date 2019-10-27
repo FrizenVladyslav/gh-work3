@@ -1,4 +1,4 @@
-const { time, timeEnd, logAll } = require('./timer');
+const { time, timeEnd, logAll } = require("./timer");
 
 const myMethods = {
   myForEach: function(callback) {
@@ -70,32 +70,32 @@ const myMethods = {
   }
 };
 
-Array.prototype = Object.assign(Array.prototype, myMethods)
+Array.prototype = Object.assign(Array.prototype, myMethods);
 
-const array = []
+const array = [];
 
-time('myMethods', 'myForEach && myPush')
+time("myMethods", "myForEach && myPush");
 Array.from(Array(1000).keys()).myForEach(item => array.myPush(item));
-timeEnd('myMethods', 'myForEach && myPush')
+timeEnd("myMethods", "myForEach && myPush");
 
-time('myMethods', 'myMap')
-array.myMap(item => item * 2)
-timeEnd('myMethods', 'myMap')
+time("myMethods", "myMap");
+array.myMap(item => item * 2);
+timeEnd("myMethods", "myMap");
 
-time('myMethods', 'mySort')
-array.mySort()
-timeEnd('myMethods', 'mySort')
+time("myMethods", "mySort");
+array.mySort();
+timeEnd("myMethods", "mySort");
 
-time('myMethods', 'myFilter')
-array.myFilter(item => item > 990)
-timeEnd('myMethods', 'myFilter')
+time("myMethods", "myFilter");
+array.myFilter(item => item > 990);
+timeEnd("myMethods", "myFilter");
 
 const result = array
   .myFilter(item => item > 990)
   .myMap(item => item * 2)
   .reverse()
-  .mySort()
+  .mySort();
 
-console.log('result', result)
+console.log("result", result);
 
-logAll()
+logAll();
